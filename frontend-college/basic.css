@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color: red;
+}
+body{
+    background-color: lightblue;
+}
+p{
+    font-size: 20px;
+    color: green;
+}
+div{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+ul{
+    list-style-type: square;
+}

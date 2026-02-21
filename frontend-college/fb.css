@@ -1,0 +1,23 @@
+body{
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    max-width: 1000px;
+    justify-content: space-between;
+    align-items: center;
+}
+.left{
+    width: 50%;
+
+}
+.loginbox input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}

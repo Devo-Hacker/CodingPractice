@@ -1,0 +1,10 @@
+check for git version : git --version
+1.initialize the git repo: git init
+2.add the files: git add .
+3.commit the changes: git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Devo-Hacker/DailyCodePractice
+git push -u origin main --force
+
+
+(i have converted my node_modules to .gitignore and uploaded to the gihub will it be problematic)
