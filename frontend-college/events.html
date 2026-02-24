@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box{
+            width: 200px;
+            height:100px;
+            background-color: yellow;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Events</h1>
+    <!--Events -> user action -click, type, hover -->
+    <!-- listner -> waits and respond -->
+    <h1 id = "heading">Hello JavaScript</h1>
+    <button id="btn">Change Text</button>
+    <!-- click and double cllick Event -->
+     <button id="singleclick">Click me</button>
+     <button id="dblClick">Double Click</button>
+    <!-- Mouse Events -->
+      <div id ="box">Mouse Events</div>
+    <!-- Keyboard events -->
+       <input type="text" name="" id="KeyboardEvent" placeholder="Type something here">
+    <!-- change Event -->
+     <select name="" id="dropdown">
+        <option value = "">select</option>
+        <option value = "red">red</option>
+        <option value = "green">green</option>
+        <option value = "yellow">yellow</option>
+     </select>
+     <!-- Form Events -->
+      <form id= "form1" action="">
+        <input type = "text" anme = "" placeholder="Enter the Name here">
+        <button type = "submit">Submit</button>
+      </form>
+    <script>
+        //window events
+        window.addEventListener("load", function(){
+            console.log("page is fully loaded")
+        })
+        window.addEventListener("scroll", function(){
+            console.log("page scrolled")
+        })
+        window.addEventListener("resize", function(){
+            console.log("window resized")
+        })
+        //form
+        let form = document.getElementById("form1")
+        form1.addEventListener("submit", function(){
+            event.preventDefault()//prevent page reload
+            alert("form is submitted")
+        })
+        //change event
+        let dropdown = document.getElementById("dropdown")
+            dropdown.addEventListener("change", function(){
+                document.body.style.background = dropdown.value
+            })
+        //Keyboard events
+        let input = document.getElementById("KeyboardEvent")
+        input.addEventListener("Keydown", function(){
+            console.log("key is down ", event.key)
+        })
+        input.addEventListener("Keyup", function(){
+            console.log("key is up ", event.key)
+        })
+
+
+
+        //mouse events
+        let box = document.getElementById("box")
+        box.addEventListener("mouseover", function(){
+            box.style.background = "blue"
+        })
+        box.addEventListener("mouseout", function(){
+            box.style.background = "yellow"
+        })
+        
+
+        //single click and double click
+        document.getElementById("singleclick").addEventListener("click",function(){
+            alert("This is Single Click")
+        })
+        document.getElementById("dblClick").addEventListener("dblclick", function(){
+            alert("button is called by double click")
+        })
+        box.addEventListener("mouseup", function(){
+            console.log("mouse is released")
+        })
+        box.addEventListener("mousedown", function(){
+            console.log("mouse is pressed")
+        })
+        
+        //access or select the element
+        let heading = document.getElementById("heading")
+        let button = document.getElementById("btn")
+        //add the events
+        button.addEventListener("click", function(){
+            
+            //button - select the element
+            //addeventlistner - method
+            //click -> event name
+            //function ->
+            //what to do
+            heading.innerHTML = "Welcome to JS Events"
+        })
+    </script>
+
+
+</body>
+</html>
