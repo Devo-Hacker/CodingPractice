@@ -80,7 +80,7 @@ button:hover{
     background-color: rgb(144, 207, 238);
     cursor: pointer;
     transition: 0.5s;
-    transform: scale(1);
+    transform: scale(1.2);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 footer{
