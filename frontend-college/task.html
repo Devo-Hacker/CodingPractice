@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo (Pure JS)</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .box {
+      width: 300px;
+    }
+
+    input {
+      width: 70%;
+      padding: 8px;
+    }
+
+    button {
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    li {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      background: #222;
+      padding: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Todo</h2>
+    <input type="text" id="input">
+    <button id="addBtn">Add</button>
+
+    <ul id="list"></ul>
+  </div>
+
+  <script>
+    const input = document.getElementById("input");
+    const button = document.getElementById("addBtn");
+    const list = document.getElementById("list");
+
+    button.addEventListener("click", function () {
+      const value = input.value.trim();
+
+      if (value === "") return;
+
+      const li = document.createElement("li");
+
+      const span = document.createElement("span");
+      span.textContent = value;
+
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "X";
+
+      delBtn.addEventListener("click", function () {
+        li.remove();
+      });
+
+      li.appendChild(span);
+      li.appendChild(delBtn);
+      list.appendChild(li);
+
+      input.value = "";
+    });
+
+    input.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        button.click();
+      }
+    });
+  </script>
+
+</body>
+</html>

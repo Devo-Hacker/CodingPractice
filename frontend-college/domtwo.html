@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark{
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Introduction to DOM</h1>
+    <p id="para">Welcome to DOM</p>
+    <!-- dynamic stuling and content updates, -->
+     <button onclick="toggle()">Toggle Mode</button>
+     <button id="btn">click</button>
+
+
+
+
+    <script>
+        //DOM
+        console.log(document);
+        console.log(document.body);
+        //DOM traversal
+        let t = document.getElementById("heading");
+        console.log(t.parentNode);
+        console.log(t.nextElementSibling);
+        console.log(document.body.children);
+        //DOM manipulation
+        let heading = document.getElementById("heading");
+        heading.textContent = "DOM updated or text is changed";
+        heading.style.color = "red";
+        //create element
+        let newElement = document.createElement("p");
+        newElement.textContent = "new element added";
+        document.body.appendChild(newElement);
+        document.getElementById("btn").addEventListener("click", ()=>{
+            alert("btn is clicked");
+        })
+        function toggle(){
+            document.body.classList.toggle("dark");
+        }
+    </script>
+</body>
+</html>
